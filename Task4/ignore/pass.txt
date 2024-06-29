@@ -1,0 +1,6 @@
+MongoDB connection:
+    Username: brukmakeni
+    Password: dqip0npzMUc1xszh
+
+
+mongodb+srv://brukmakeni:dqip0npzMUc1xszh@taskmanagercluster.hkajnkq.mongodb.net/?retryWrites=true&w=majority&appName=TaskManagerCluster
