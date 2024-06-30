@@ -2,7 +2,7 @@ import express , { Express, Request, Response } from "express";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
 import TodoRoute from "../Routes/todo.route";
-import cors from "cors";
+import cors from "cors"; 
 
 
 // Load environment variables from .env file
@@ -13,7 +13,12 @@ dotenv.config();
 const app = express();
 
 
-app.use(cors());
+// app.use(cors());
+app.use(cors({
+  origin: 'http://localhost:3000', // Replace with your frontend URL
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type']
+}));
 app.use(express.json());
 
 
@@ -32,12 +37,12 @@ let dbURI: string;
 dbURI = process.env.MONGODB_URI || "";
 // console.log(dbURI);
 
-const options: any = {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-};
+// const options: any = {
+//   useNewUrlParser: true,
+//   useUnifiedTopology: true
+// };
 
-mongoose.connect(dbURI, options)
+mongoose.connect(dbURI)
   .then(() => {
     console.log("Connected to database.");
     app.listen(port, () => {
