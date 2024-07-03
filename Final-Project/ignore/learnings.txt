@@ -1,0 +1,1 @@
+Cors - Cross origin resource sharing. To get the data form the back end to the front end
